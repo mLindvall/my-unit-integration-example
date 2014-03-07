@@ -3,17 +3,15 @@
  */
 package com.michaellindvall.tests;
 
-import static org.h2.engine.Constants.UTF8;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.nullValue;
-import static org.junit.Assert.assertThat;
-
+import static org.h2.engine.Constants.*;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 import java.io.File;
 import javax.sql.DataSource;
 import org.dbunit.IDatabaseTester;
 import org.dbunit.JdbcDatabaseTester;
 import org.dbunit.dataset.IDataSet;
-import org.dbunit.dataset.xml.FlatXmlDataSet;
+import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.operation.DatabaseOperation;
 import org.h2.jdbcx.JdbcDataSource;
 import org.h2.tools.RunScript;
@@ -70,7 +68,7 @@ public class XmlDatabaseTest {
   }
 
   private IDataSet readDataSet() throws Exception {
-    return new FlatXmlDataSet(new File("dataset.xml"));
+    return new FlatXmlDataSetBuilder().build(new File("dataset.xml"));
   }
 
   private static final String JDBC_DRIVER = org.h2.Driver.class.getName();
