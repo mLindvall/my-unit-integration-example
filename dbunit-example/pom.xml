@@ -8,7 +8,7 @@
     </parent>
     <artifactId>dbunit-example</artifactId>
     <packaging>jar</packaging>
-    <name>MyUnitIntegrationExample</name>
+    <name>dbunit-example</name>
     <description>testing unit and integration testing</description>
     <build>
         <pluginManagement>
