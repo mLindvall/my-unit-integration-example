@@ -39,7 +39,7 @@ public class NoXmlDatabaseTest {
 
   @BeforeClass
   public static void createSchema() throws Exception {
-    RunScript.execute("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1", "sa", "", "schema.sql", UTF8, false);
+    RunScript.execute("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1", "sa", "", "schema.sql", null, false);
   }
 
   /**
